@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$menu_color: #222;
+$bg_color: #303133;
+
+
+
+.wrapper {
+    background-color: $bg_color;
+    &__header {
+        padding: 0 10px;
+        max-height: 70px;
+        border-bottom: 1px solid black;
+        background-color: $menu_color;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 15px;
+        
+        &-search {
+            margin-bottom: 15px;
+            & svg {
+                position: relative;
+                left: 23px;
+            }
+            & input {
+                padding: 7px 30px 7px 30px;
+                border-radius: 8px;
+                border: 1px solid hsla(0,0%,100%,0.125);
+                background-color: $menu_color;
+                transition: border .3s linear;
+                &:hover {
+                    border-color: white;
+                    transition: all .3s linear;
+                }
+                &:focus-visible {
+                    outline: none;
+                    border-color: white;
+                    color: white;
+                }
+
+            }
+        }
+    }
+}
+
+.wrapper-menu {
+    padding: 0 10px;
+    max-width: 200px;
+    width: 100%;
+    background-color: $menu_color;
+    height: 100vh;
+    padding-top: 10px;
+    
+    
+    
+    &__logo {
+        max-width: 60px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        
+    }
+    &__nav {
+        & a {
+            text-decoration: none;
+            color: white;
+        }
+        & li {
+            list-style-type: none;
+            &::before {
+                    content: '';
+                    display: inline-block;
+                    border-left: 1px transparent white;
+                    transition: border .3s ease;
+                    height: 12px;
+                    position: relative;
+                    left: -10px;
+            }
+            &:hover {
+                &::after {
+                    transform: rotate(90deg);
+                    transition: transform .3s ease;
+                }
+                &::before {
+                    border: 1px solid white;
+                    transition: border .3s ease;
+                    
+                }
+            }
+        }
+        & li:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+        & li::after {
+            content: '';
+            display: inline-block;
+            background-image: url(../media/arrow.svg);
+            width: 10px;
+            height: 6px;
+            position: relative;
+            left: 7px;
+            transition: transform .3s ease;
+        }
+    }
+}
