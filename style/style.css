@@ -9,7 +9,7 @@
   background-color: #303133;
 }
 
-.wrapper__header {
+.wrapper .header {
   padding: 0 10px;
   max-height: 70px;
   border-bottom: 1px solid black;
@@ -23,16 +23,16 @@
   padding-top: 15px;
 }
 
-.wrapper__header-search {
+.wrapper .header__search {
   margin-bottom: 15px;
 }
 
-.wrapper__header-search svg {
+.wrapper .header__search svg {
   position: relative;
   left: 23px;
 }
 
-.wrapper__header-search input {
+.wrapper .header__search input {
   padding: 7px 30px 7px 30px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -41,19 +41,19 @@
   transition: border .3s linear;
 }
 
-.wrapper__header-search input:hover {
+.wrapper .header__search input:hover {
   border-color: white;
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
 }
 
-.wrapper__header-search input:focus-visible {
+.wrapper .header__search input:focus-visible {
   outline: none;
   border-color: white;
   color: white;
 }
 
-.wrapper-menu {
+.menu {
   padding: 0 10px;
   max-width: 200px;
   width: 100%;
@@ -62,33 +62,32 @@
   padding-top: 10px;
 }
 
-.wrapper-menu__logo {
+.menu__logo {
   max-width: 60px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.wrapper-menu__nav a {
+.menu__nav a {
   text-decoration: none;
   color: white;
 }
 
-.wrapper-menu__nav li {
+.menu__nav li {
   list-style-type: none;
 }
 
-.wrapper-menu__nav li::before {
+.menu__nav li::before {
   content: '';
   display: inline-block;
-  border-left: 1px transparent white;
-  -webkit-transition: border .3s ease;
-  transition: border .3s ease;
+  width: 2px;
   height: 12px;
+  background-color: none;
   position: relative;
   left: -10px;
 }
 
-.wrapper-menu__nav li:hover::after {
+.menu__nav li:hover::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -webkit-transition: -webkit-transform .3s ease;
@@ -97,17 +96,17 @@
   transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
-.wrapper-menu__nav li:hover::before {
-  border: 1px solid white;
-  -webkit-transition: border .3s ease;
-  transition: border .3s ease;
+.menu__nav li:hover::before {
+  background-color: white;
+  -webkit-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in;
 }
 
-.wrapper-menu__nav li:not(:last-of-type) {
+.menu__nav li:not(:last-of-type) {
   margin-bottom: 20px;
 }
 
-.wrapper-menu__nav li::after {
+.menu__nav li::after {
   content: '';
   display: inline-block;
   background-image: url(../media/arrow.svg);
