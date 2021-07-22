@@ -19,6 +19,51 @@ $bg_color: #303133;
         display: flex;
         justify-content: flex-end;
         padding-top: 15px;
+         .burger {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            & span, span::before, span::after {
+                width: 100%;
+                position: absolute;
+                height: 2px;
+                background: white;
+                display: block;
+                transition: .3s;
+                border-radius: 15px;
+            }
+            & span::before {
+                content: "";
+                top: -10px;
+                transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+            & span {
+                top: 20px;
+            }
+            & span::after {
+                content: "";
+                bottom: -10px;
+                transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+            & span.active::before {
+                content: "";
+                top: 0px;
+                transform: rotate(45deg);
+                transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            & span.active::after {
+                content: "";
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            & span.active {
+                background: rgba(255, 255, 255, 0); 
+            }
+         }
         
         &__search {
             margin-bottom: 15px;
@@ -54,7 +99,13 @@ $bg_color: #303133;
     background-color: $menu_color;
     height: 100vh;
     padding-top: 10px;
-    
+    transform: translateX(-203px);
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &.active {
+        transform: translateX(0px);
+        transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
     
     &__logo {
         max-width: 60px;
