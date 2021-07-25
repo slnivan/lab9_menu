@@ -30,10 +30,14 @@ $bg_color: #303133;
                 width: 100%;
                 position: absolute;
                 height: 2px;
-                background: white;
+                background: hsla(0,0%,100%,0.125);
                 display: block;
                 transition: .3s;
                 border-radius: 15px;
+                &:hover {
+                    background: white;
+                    transition: background .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
             }
             & span::before {
                 content: "";
@@ -131,7 +135,7 @@ $bg_color: #303133;
             }
             &:hover {
                 &::after {
-                    transform: rotate(90deg);
+                    transform: rotate(0deg);
                     transition: transform .3s ease;
                 }
                 &::before {
@@ -151,7 +155,20 @@ $bg_color: #303133;
             height: 6px;
             position: relative;
             left: 7px;
+            transform: rotate(90deg);
             transition: transform .3s ease;
         }
+
+        & .dropdown-content {
+            margin: 5px;
+            max-width: 100px;
+            padding: 0 10px 10px 10px;
+            display: none;
+
+            &.show {
+            display: block;
+            }
+        }
+        
     }
 }

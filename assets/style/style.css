@@ -36,11 +36,17 @@
   width: 100%;
   position: absolute;
   height: 2px;
-  background: white;
+  background: rgba(255, 255, 255, 0.125);
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
   border-radius: 15px;
+}
+
+.wrapper .header .burger span:hover, .wrapper .header .burger span::before:hover, .wrapper .header .burger span::after:hover {
+  background: white;
+  -webkit-transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .wrapper .header .burger span::before {
@@ -171,8 +177,8 @@
 }
 
 .menu__nav li:hover::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
   -webkit-transition: -webkit-transform .3s ease;
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
@@ -197,9 +203,22 @@
   height: 6px;
   position: relative;
   left: 7px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: -webkit-transform .3s ease;
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.menu__nav .dropdown-content {
+  margin: 5px;
+  max-width: 100px;
+  padding: 0 10px 10px 10px;
+  display: none;
+}
+
+.menu__nav .dropdown-content.show {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
