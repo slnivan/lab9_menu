@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  entry: ['./assets/javascript/index.js', './assets/javascript/todo.js', './assets/javascript/menu.js'],
+  entry: ['./assets/javascript/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',

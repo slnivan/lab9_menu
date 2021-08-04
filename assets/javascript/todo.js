@@ -12,11 +12,11 @@ function createToDoPoint() {
     }
     
     input.value = "";
-    let span = document.createElement('span')
+    let closeBtn = document.createElement('span')
     let txt = document.createTextNode("X");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
+    closeBtn.className = "close";
+    closeBtn.appendChild(txt);
+    li.appendChild(closeBtn);
 }
 
 const btnAdd = document.querySelector('.btn-add')
