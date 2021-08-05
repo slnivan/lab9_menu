@@ -20,6 +20,7 @@
   display: flex;
   justify-content: flex-end;
   padding-top: 15px;
+  margin-bottom: 30px;
 }
 .wrapper .header .burger {
   position: absolute;
@@ -28,6 +29,10 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+.wrapper .header .burger.activeBurger {
+  transform: translateX(200px);
+  transition: transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper .header .burger span, .wrapper .header .burger span::before, .wrapper .header .burger span::after {
   width: 100%;
@@ -70,8 +75,7 @@
   transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper .header .burger span.active {
-  transform: translateX(200px);
-  background-color: #222;
+  background-color: transparent;
   transition: transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper .header__search {
@@ -95,6 +99,91 @@
 .wrapper .header__search input:focus-visible {
   outline: none;
   border-color: white;
+  color: white;
+}
+.wrapper__todo {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  background-color: #222;
+  border-radius: 10px;
+}
+.wrapper__todo h2 {
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.wrapper__todo input {
+  padding: 7px 30px 7px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: #222;
+  transition: border 0.3s linear;
+  width: 75%;
+  margin-bottom: 20px;
+}
+.wrapper__todo input:hover {
+  border-color: white;
+  transition: all 0.3s linear;
+}
+.wrapper__todo input:focus-visible {
+  outline: none;
+  border-color: white;
+  color: white;
+}
+.wrapper__todo .btn-add {
+  width: 20%;
+  color: white;
+  background-color: #303133;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 10px;
+  padding: 7px 30px 7px 30px;
+  transition: all 0.3s linear;
+}
+.wrapper__todo .btn-add:hover {
+  border-color: white;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.wrapper__todo .todo__list {
+  list-style: none;
+  width: 100%;
+}
+.wrapper__todo .todo__list li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  font-size: 18px;
+  transition: 0.2s;
+  user-select: none;
+  list-style-type: none;
+  color: white;
+}
+.wrapper__todo .checked {
+  text-decoration: line-through;
+}
+.wrapper__todo .checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+.wrapper__todo .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+.wrapper__todo .close:hover {
+  background-color: #f44336;
   color: white;
 }
 
